@@ -1,0 +1,10 @@
+game.ReplicatedStorage.ToolEvents.MedkitEvent.OnServerEvent:Connect(function(player)
+	if player.leaderstats.Points.Value >= 30 then ---The cost of your item
+		player.leaderstats.Points.Value -= 30 ---The cost of your item
+		local medkit = game.ReplicatedStorage.Medkit:Clone()
+		medkit.Parent = player.Backpack
+	end
+	if player.Backpack:FindFirstChild("Medkit") then
+		return
+	end
+end)
